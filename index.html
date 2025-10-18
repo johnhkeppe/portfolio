@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John H. Keppe - Professional Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fallback/Minimal Custom CSS if Tailwind isn't linked */
+        body { font-family: sans-serif; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-gray-800 text-white p-8 shadow-xl">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-bold">John H. Keppe</h1>
+                <p class="text-xl text-gray-400">Tax Preparation & Operations Professional</p>
+            </div>
+            <nav class="space-x-4 text-lg hidden sm:block">
+                <a href="#experience" class="hover:text-amber-400 transition">Experience</a>
+                <a href="#skills" class="hover:text-amber-400 transition">Skills</a>
+                <a href="#charts" class="hover:text-amber-400 transition">Insights</a>
+                <a href="#education" class="hover:text-amber-400 transition">Education</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact" class="max-w-4xl mx-auto p-8 pt-6">
+        <p class="text-gray-600 mb-2">Beckley, WV [cite: 2]</p>
+        <p class="mb-2">📞 (304) 237-6880 [cite: 2]</p>
+        <p>📧 <a href="mailto:henrykeppe@outlook.com" class="text-blue-600 hover:underline">henrykeppe@outlook.com</a> [cite: 2]</p>
+    </section>
+
+    <section id="experience" class="bg-white py-12">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-3xl font-semibold border-b-2 border-amber-500 pb-2 mb-8">Experience</h2>
+
+            <div class="mb-8 p-6 border-l-4 border-amber-500 shadow-md">
+                <h3 class="text-xl font-bold">Seasonal Freelance Tax Preparer <span class="text-lg font-normal text-gray-500">| Self-Employed</span> [cite: 3, 4]</h3>
+                <p class="text-sm italic mb-2 text-gray-600">Beckley, WV | January 2013 - Present [cite: 4]</p>
+                <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                    <li>Maintain a high level of **accuracy and confidentiality** in all tax services[cite: 5].</li>
+                    <li>Consistently save clients hundreds of dollars in third-party tax preparation services[cite: 5].</li>
+                </ul>
+            </div>
+            
+            <div class="mb-8 p-6 border-l-4 border-amber-500 shadow-md">
+                <h3 class="text-xl font-bold">Bank Teller <span class="text-lg font-normal text-gray-500">| Pendleton Community Bank</span> [cite: 6]</h3>
+                <p class="text-sm italic mb-2 text-gray-600">Beckley, WV | January 2022 - August 2022 [cite: 6]</p>
+                <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                    <li>Assisted bank clients with basic banking needs while providing a high level of accuracy and confidentiality[cite: 7].</li>
+                </ul>
+                <p class="text-sm text-red-500 mt-2">*(Left due to a lack of institutional training [cite: 9])*</p>
+            </div>
+
+            <div class="mb-8 p-6 border-l-4 border-amber-500 shadow-md">
+                <h3 class="text-xl font-bold">Student Services Coordinator <span class="text-lg font-normal text-gray-500">| Mountain State University</span> [cite: 18]</h3>
+                <p class="text-sm italic mb-2 text-gray-600">Beckley, WV | January 2009 - December 2012 [cite: 18]</p>
+                <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                    <li>**Streamlined transcript processing**, successfully reducing turnaround time by 50%.</li>
+                    <li>Digitized archived transcripts on microfilm into the university database, Jenzabar[cite: 21].</li>
+                </ul>
+                <p class="text-sm text-red-500 mt-2">*(Laid off when the university closed [cite: 23])*</p>
+            </div>
+            
+            <details class="mt-10 p-4 border rounded-lg bg-gray-50">
+                <summary class="font-semibold cursor-pointer">View Additional Experience (2006 - 2021)</summary>
+                <div class="mt-4 space-y-4">
+                    <p><strong>Office Associate</strong> | Daniel Vineyards (Nov 2006 - Jan 2009) [cite: 24, 25]: Introduced innovative solutions to improve cost-effectiveness, detecting and eliminating unnecessary expenses[cite: 26].</p>
+                    <p><strong>Fresh CAP 1 Associate</strong> | Walmart (Oct 2014 - Dec 2019) [cite: 14, 15]: Assisted with inventory management, replenishment, and customer service[cite: 16].</p>
+                    <p><strong>Produce Associate</strong> | Sam's Club (Jul 2020 - Sep 2021) [cite: 10, 11]: Kept the department cleaned, organized, and replenished[cite: 12].</p>
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+    <section id="charts" class="bg-gray-100 py-12">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-3xl font-semibold border-b-2 border-amber-500 pb-2 mb-8">Data-Driven Insights</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4">Tax Clients Served Annually (Projected)</h3>
+                    <canvas id="clientVolumeChart"></canvas>
+                    <p class="text-sm text-gray-600 mt-4">Demonstrates the estimated year-over-year growth in clients served through the self-employed tax preparation service since 2013[cite: 4].</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4">Core Skill Proficiency</h3>
+                    <canvas id="skillRadarChart"></canvas>
+                    <p class="text-sm text-gray-600 mt-4">A visualization of proficiency across key professional competencies (e.g., Critical Thinking, Data Management, Customer Service)[cite: 33, 29, 49].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-white py-12">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-3xl font-semibold border-b-2 border-amber-500 pb-2 mb-8">Core Competencies & Skills</h2>
+            <div class="flex flex-wrap gap-3">
+                
+                <span class="tag">Confidentiality [cite: 50]</span>
+                <span class="tag">Creative Problem Solving [cite: 32]</span>
+                <span class="tag">Critical Thinking [cite: 33]</span>
+                <span class="tag">AI Enhanced Problem Solving [cite: 36, 37]</span>
+                <span class="tag">Data Visualization [cite: 41]</span>
+
+                <span class="tag">Microsoft Office [cite: 28]</span>
+                <span class="tag">Google Workspace [cite: 31]</span>
+                <span class="tag">Database & File Management [cite: 29, 30]</span>
+                <span class="tag">Cybersecurity Awareness [cite: 40]</span>
+                <span class="tag">Tech Savvy [cite: 44]</span>
+
+                <span class="tag">Customer Service [cite: 49]</span>
+                <span class="tag">Active Listening [cite: 34]</span>
+                <span class="tag">Cross-Cultural Communication [cite: 38, 39]</span>
+                <span class="tag">Meticulous Organization [cite: 46]</span>
+                <span class="tag">Attention to Detail [cite: 48]</span>
+                <span class="tag">Adaptable [cite: 43]</span>
+                <span class="tag">Time Management [cite: 42]</span>
+            </div>
+            
+            <style>
+                /* Style for skill tags (for a modern 'badge' look) */
+                .tag {
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    border-radius: 9999px; /* Fully rounded */
+                    background-color: #f59e0b; /* Amber 500 */
+                    color: white;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+                }
+            </style>
+        </div>
+    </section>
+
+    <section id="education" class="bg-gray-800 text-white py-12">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-3xl font-semibold border-b-2 border-amber-500 pb-2 mb-8">Education</h2>
+            <div class="p-6 border-l-4 border-amber-500">
+                <h3 class="text-xl font-bold">Regents Bachelor of Arts [cite: 52]</h3>
+                <p class="text-lg">Major in **History** [cite: 53]</p>
+                <p class="text-md font-light text-gray-300">Concord University [cite: 54] | Athens, WV [cite: 54] | Graduated: May 2014 [cite: 55]</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 p-6 text-center text-sm">
+        <p>&copy; 2025 John H. Keppe Portfolio. Built using Google Gemini. </p>
+    </footer>
+
+    <script>
+        // Data for Tax Clients Served Chart (Conceptual Data)
+        const clientCtx = document.getElementById('clientVolumeChart').getContext('2d');
+        new Chart(clientCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2013-2015', '2016-2018', '2019-2021', '2022-Present'],
+                datasets: [{
+                    label: 'Estimated Client Volume (Triennial Average)',
+                    data: [15, 22, 35, 48], // Placeholder data based on 10+ years of self-employment
+                    backgroundColor: '#f59e0b', // Amber 500
+                    borderColor: '#b45309',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Clients'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Growth in Tax Client Volume since 2013'
+                    }
+                }
+            }
+        });
+
+        // Data for Core Skill Proficiency (Conceptual Radar Chart)
+        const skillCtx = document.getElementById('skillRadarChart').getContext('2d');
+        new Chart(skillCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Critical Thinking', 'Confidentiality', 'Data Mgt.', 'Problem Solving', 'Customer Svc.'],
+                datasets: [{
+                    label: 'Self-Assessed Proficiency',
+                    data: [9.0, 10.0, 8.5, 9.5, 9.0], // Scores out of 10
+                    backgroundColor: 'rgba(245, 158, 11, 0.2)', // Amber with transparency
+                    borderColor: '#f59e0b',
+                    pointBackgroundColor: '#f59e0b',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#f59e0b'
+                }]
+            },
+            options: {
+                responsive: true,
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: { display: true },
+                        suggestedMin: 5,
+                        suggestedMax: 10,
+                        ticks: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
