@@ -82,17 +82,17 @@
         <div class="max-w-4xl mx-auto px-8">
             <h2 class="text-3xl font-semibold border-b-2 border-amber-500 pb-2 mb-8">Data-Driven Insights</h2>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">Tax Clients Served Annually (Projected)</h3>
+                    <h3 class="text-xl font-bold mb-4">Composition of Tax Client Base</h3>
                     <canvas id="clientVolumeChart"></canvas>
-                    <p class="text-sm text-gray-600 mt-4">Demonstrates the estimated year-over-year growth in clients served through the self-employed tax preparation service since 2013[cite: 4].</p>
+                    <p class="text-sm text-gray-600 mt-4">This chart represents the breakdown of the four family members currently served by the freelance tax preparation service, highlighting experience with different adult client types (elderly vs. non-elderly).</p>
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-xl font-bold mb-4">Core Skill Proficiency</h3>
                     <canvas id="skillRadarChart"></canvas>
-                    <p class="text-sm text-gray-600 mt-4">A visualization of proficiency across key professional competencies (e.g., Critical Thinking, Data Management, Customer Service)[cite: 33, 29, 49].</p>
+                    <p class="text-sm text-gray-600 mt-4">A visualization of proficiency across key professional competencies (e.g., Critical Thinking, Data Management, Customer Service)</p>
                 </div>
             </div>
         </div>
@@ -156,42 +156,39 @@
     </footer>
 
     <script>
-        // Data for Tax Clients Served Chart (Conceptual Data)
-        const clientCtx = document.getElementById('clientVolumeChart').getContext('2d');
-        new Chart(clientCtx, {
-            type: 'bar',
-            data: {
-                labels: ['2013-2015', '2016-2018', '2019-2021', '2022-Present'],
-                datasets: [{
-                    label: 'Estimated Client Volume (Triennial Average)',
-                    data: [15, 22, 35, 48], // Placeholder data based on 10+ years of self-employment
-                    backgroundColor: '#f59e0b', // Amber 500
-                    borderColor: '#b45309',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Number of Clients'
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: 'Growth in Tax Client Volume since 2013'
-                    }
+    // Data for Tax Clients Served Chart (Corrected Data: 4 family members)
+const clientCtx = document.getElementById('clientVolumeChart').getContext('2d');
+new Chart(clientCtx, {
+    type: 'doughnut', // Changed to Doughnut chart
+    data: {
+        labels: ['Elderly Adults (2)', 'Adult Children (2)'],
+        datasets: [{
+            label: 'Number of Clients',
+            data: [2, 2], // The actual breakdown of your 4 clients
+            backgroundColor: [
+                '#f59e0b', // Amber
+                '#3b82f6', // Blue
+            ],
+            borderColor: '#ffffff',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    padding: 20
                 }
+            },
+            title: {
+                display: true,
+                text: 'Family Tax Client Breakdown (Total: 4)'
             }
-        });
+        }
+    }
+});
 
         // Data for Core Skill Proficiency (Conceptual Radar Chart)
         const skillCtx = document.getElementById('skillRadarChart').getContext('2d');
