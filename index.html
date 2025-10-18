@@ -159,76 +159,117 @@
         <p>&copy; 2025 John H. Keppe Portfolio. Built using Google Gemini. </p>
     </footer>
 
-    <script>
-    // Data for Tax Clients Served Chart (Corrected Data: 4 family members)
-const clientCtx = document.getElementById('clientVolumeChart').getContext('2d');
-new Chart(clientCtx, {
-    type: 'doughnut', // Changed to Doughnut chart
-    data: {
-        labels: ['Elderly Adults (2)', 'Adult Children (2)'],
-        datasets: [{
-            label: 'Number of Clients',
-            data: [2, 2], // The actual breakdown of your 4 clients
-            backgroundColor: [
-                '#f59e0b', // Amber
-                '#3b82f6', // Blue
-            ],
-            borderColor: '#ffffff',
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'bottom',
-                labels: {
-                    padding: 20
-                }
-            },
-            title: {
-                display: true,
-                text: 'Family Tax Client Breakdown (Total: 4)'
-            }
-        }
-    }
-});
+  <script>
+    // ===================================
+    // 1. BACK TO TOP BUTTON LOGIC
+    // ===================================
 
-        // Data for Core Skill Proficiency (Conceptual Radar Chart)
-        const skillCtx = document.getElementById('skillRadarChart').getContext('2d');
-        new Chart(skillCtx, {
-            type: 'radar',
-            data: {
-                labels: ['Critical Thinking', 'Confidentiality', 'Data Mgt.', 'Problem Solving', 'Customer Svc.'],
-                datasets: [{
-                    label: 'Self-Assessed Proficiency',
-                    data: [9.0, 10.0, 8.5, 9.5, 9.0], // Scores out of 10
-                    backgroundColor: 'rgba(245, 158, 11, 0.2)', // Amber with transparency
-                    borderColor: '#f59e0b',
-                    pointBackgroundColor: '#f59e0b',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: '#f59e0b'
-                }]
-            },
-            options: {
-                responsive: true,
-                elements: {
-                    line: {
-                        borderWidth: 3
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    // Function to check scroll position and toggle button visibility
+    window.addEventListener('scroll', () => {
+        // Show button if user scrolls down more than 300px
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('opacity-100', 'visible');
+            backToTopBtn.classList.remove('opacity-0', 'invisible');
+        } else {
+            backToTopBtn.classList.remove('opacity-100', 'visible');
+            backToTopBtn.classList.add('opacity-0', 'invisible');
+        }
+    });
+
+    // Function to scroll smoothly to the top when clicked
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Provides a smooth scrolling animation
+        });
+    });
+
+    // ===================================
+    // 2. CHART.JS LOGIC (Your existing code)
+    // ===================================
+
+    // Data for Tax Clients Served Chart (Corrected Data: 4 family members)
+    const clientCtx = document.getElementById('clientVolumeChart').getContext('2d');
+    new Chart(clientCtx, {
+        type: 'doughnut', // Changed to Doughnut chart
+        data: {
+            labels: ['Elderly Adults (2)', 'Adult Children (2)'],
+            datasets: [{
+                label: 'Number of Clients',
+                data: [2, 2], // The actual breakdown of your 4 clients
+                backgroundColor: [
+                    '#f59e0b', // Amber
+                    '#3b82f6', // Blue
+                ],
+                borderColor: '#ffffff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20
                     }
                 },
-                scales: {
-                    r: {
-                        angleLines: { display: true },
-                        suggestedMin: 5,
-                        suggestedMax: 10,
-                        ticks: { display: false }
-                    }
+                title: {
+                    display: true,
+                    text: 'Family Tax Client Breakdown (Total: 4)'
                 }
             }
-        });
-    </script>
+        }
+    });
 
+    // Data for Core Skill Proficiency (Conceptual Radar Chart)
+    const skillCtx = document.getElementById('skillRadarChart').getContext('2d');
+    new Chart(skillCtx, {
+        type: 'radar',
+        data: {
+            labels: ['Critical Thinking', 'Confidentiality', 'Data Mgt.', 'Problem Solving', 'Customer Svc.'],
+            datasets: [{
+                label: 'Self-Assessed Proficiency',
+                data: [9.0, 10.0, 8.5, 9.5, 9.0], // Scores out of 10
+                backgroundColor: 'rgba(245, 158, 11, 0.2)', // Amber with transparency
+                borderColor: '#f59e0b',
+                pointBackgroundColor: '#f59e0b',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#f59e0b'
+            }]
+        },
+        options: {
+            responsive: true,
+            elements: {
+                line: {
+                    borderWidth: 3
+                }
+            },
+            scales: {
+                r: {
+                    angleLines: { display: true },
+                    suggestedMin: 5,
+                    suggestedMax: 10,
+                    ticks: { display: false }
+                }
+            }
+        }
+    });
+</script>
+    
+<button id="backToTopBtn" 
+        class="fixed bottom-6 right-6 
+               bg-amber-500 text-white p-3 rounded-full 
+               shadow-xl hover:bg-amber-600 transition-opacity 
+               duration-300 opacity-0 invisible"
+        aria-label="Go to top of page">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+</button>
+    
 </body>
 </html>
